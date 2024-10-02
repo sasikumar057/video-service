@@ -32,14 +32,14 @@ app.post("/upload", upload.single("video"), async (req, res) => {
 
     // Authenticate with Google API
     const auth = new google.auth.GoogleAuth({
-      keyFile: "video-sender-432606-7d668f477034.json", // Path to the service account key file
+      keyFile: "###", // Path to the service account key file
       scopes: ["https://www.googleapis.com/auth/drive.file"], // Scopes for accessing Google Drive
     });
 
     const driveService = google.drive({ version: "v3", auth }); // Create a Google Drive service client
     const fileMetadata = {
       name: `${req.file.originalname}`, // Name of the file to be uploaded
-      parents: ["1ZXMylaomLwLCw75jexFo4S223eJT2WX_"], // Parent folder ID in Google Drive
+      parents: ["####"], // Parent folder ID in Google Drive
     };
     const media = {
       mimeType: req.file.mimetype, // MIME type of the uploaded file
